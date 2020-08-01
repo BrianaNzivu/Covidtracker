@@ -11,9 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".BottomNavigationBar"
-            android:label="@string/title_activity_bottom_navigation_bar"></activity>
         <activity android:name=".Home" />
         <activity android:name=".Mainslider" />
         <activity android:name=".MainActivity">

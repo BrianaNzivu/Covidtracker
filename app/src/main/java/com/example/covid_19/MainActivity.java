@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
-import com.example.covid_19.model.World;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

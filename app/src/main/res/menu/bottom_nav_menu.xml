@@ -5,12 +5,14 @@
         android:id="@+id/home"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/title_home"
+        android:enabled="true"
         />
 
     <item
         android:id="@+id/details"
         android:icon="@drawable/ic_baseline_details_24"
-        android:title="Details" />
+        android:title="Details"
+        android:enabled="true"/>
 
 
 </menu>

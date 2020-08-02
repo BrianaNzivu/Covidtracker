@@ -35,45 +35,47 @@ public class Home extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction ft = fragmentManager.beginTransaction();
-            switch (item.getItemId()) {
+    private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener
+            = item -> {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                switch (item.getItemId()) {
 
-                case R.id.home:
+                    case R.id.home:
 
 
-                    HomeFragment home = new HomeFragment();
-                    ft.replace(R.id.container_fragment, home);
-                    ft.commit();
-                    return true;
+                        HomeFragment home = new HomeFragment();
+                        ft.replace(R.id.container_fragment, home);
+                        ft.commit();
+                        return true;
 
-                case R.id.details:
+                    case R.id.details:
 
-                    DetailsFragment details = new DetailsFragment();
-                    ft.replace(R.id.container_fragment,details);
-                    ft.commit();
-                    return true;
+                        DetailsFragment details = new DetailsFragment();
+                        ft.replace(R.id.container_fragment,details);
+                        ft.commit();
+                        return true;
 
-            }
-            return false;
-        }
-    };
+                }
+                return false;
+            };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        BottomNavigationView navView = findViewById(R.id.navView);
 
+
+        navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         HomeFragment home = new HomeFragment();
         ft.replace(R.id.container_fragment, home);
         ft.commit();
+
 
     }
 }

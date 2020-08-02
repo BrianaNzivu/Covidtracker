@@ -31,9 +31,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="235dp"
+                    android:layout_marginTop="260dp"
                     android:text="Signs &amp; Symptoms"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/Black"
                     android:textStyle="bold"
                     android:textSize="18sp" />
 
@@ -45,7 +45,8 @@
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="wrap_content"
@@ -61,9 +62,8 @@
                             app:layout_constraintVertical_bias="0.0">
 
                             <ImageView
-                                android:layout_width="130dp"
-                                android:layout_height="130dp"
-                                android:paddingRight="18dp"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/fever" />
 
@@ -74,7 +74,7 @@
                                 android:paddingVertical="9dp"
                                 android:text="Fever"
                                 android:textSize="16sp"
-                                android:layout_marginTop="130dp"
+                                android:layout_marginTop="100dp"
                                 android:textStyle="bold"
                                 android:textColor="@color/Black"/>
 
@@ -94,9 +94,8 @@
                             app:layout_constraintVertical_bias="0.0">
 
                         <ImageView
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:paddingRight="18dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/cough" />
 
@@ -107,7 +106,7 @@
                             android:paddingVertical="9dp"
                             android:text="Coughing"
                             android:textSize="16sp"
-                            android:layout_marginTop="130dp"
+                            android:layout_marginTop="100dp"
                             android:textStyle="bold"
                             android:textColor="@color/Black"/>
 
@@ -127,9 +126,8 @@
                             app:layout_constraintVertical_bias="0.0">
 
                             <ImageView
-                                android:layout_width="130dp"
-                                android:layout_height="130dp"
-                                android:paddingRight="18dp"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/breath" />
 
@@ -140,7 +138,7 @@
                                 android:paddingVertical="9dp"
                                 android:text="Difficulty breathing"
                                 android:textSize="16sp"
-                                android:layout_marginTop="130dp"
+                                android:layout_marginTop="100dp"
                                 android:textStyle="bold"
                                 android:textColor="@color/Black"/>
 
@@ -160,9 +158,8 @@
                             app:layout_constraintVertical_bias="0.0">
 
                         <ImageView
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:paddingRight="18dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/migraine" />
 
@@ -173,7 +170,7 @@
                             android:paddingVertical="9dp"
                             android:text="Headache"
                             android:textSize="16sp"
-                            android:layout_marginTop="130dp"
+                            android:layout_marginTop="100dp"
                             android:textStyle="bold"
                             android:textColor="@color/Black"/>
 
@@ -193,9 +190,8 @@
                             app:layout_constraintVertical_bias="0.0">
 
                         <ImageView
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:paddingRight="18dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/tired" />
 
@@ -206,7 +202,7 @@
                             android:paddingVertical="9dp"
                             android:text="Fatigue"
                             android:textSize="16sp"
-                            android:layout_marginTop="130dp"
+                            android:layout_marginTop="100dp"
                             android:textStyle="bold"
                             android:textColor="@color/Black"/>
                         </androidx.cardview.widget.CardView>
@@ -225,9 +221,8 @@
                             app:layout_constraintVertical_bias="0.0">
 
                         <ImageView
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:paddingRight="18dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/vomit" />
 
@@ -238,7 +233,7 @@
                             android:paddingVertical="9dp"
                             android:text="Nausea"
                             android:textSize="16sp"
-                            android:layout_marginTop="130dp"
+                            android:layout_marginTop="100dp"
                             android:textStyle="bold"
                             android:textColor="@color/Black"/>
 
@@ -258,9 +253,8 @@
                             app:layout_constraintVertical_bias="0.0">
 
                         <ImageView
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:paddingRight="18dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/sorethroat" />
 
@@ -271,7 +265,7 @@
                             android:paddingVertical="9dp"
                             android:text="Sore Throat"
                             android:textSize="16sp"
-                            android:layout_marginTop="130dp"
+                            android:layout_marginTop="100dp"
                             android:textStyle="bold"
                             android:textColor="@color/Black"/>
 
@@ -291,9 +285,8 @@
                             app:layout_constraintVertical_bias="0.0">
 
                         <ImageView
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            android:paddingRight="18dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
                             android:scaleType="centerCrop"
                             android:src="@drawable/arthritis" />
 
@@ -304,7 +297,7 @@
                             android:paddingVertical="9dp"
                             android:text="Muscle aches"
                             android:textSize="16sp"
-                            android:layout_marginTop="130dp"
+                            android:layout_marginTop="100dp"
                             android:textStyle="bold"
                             android:textColor="@color/Black"/>
 
@@ -316,21 +309,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="465dp"
+                    android:layout_marginTop="500dp"
                     android:text="Precautions"
-                    android:textColor="@color/Rosewater"
+                    android:textColor="@color/Black"
                     android:textStyle="bold"
                     android:textSize="18sp" />
 
                 <HorizontalScrollView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="500dp">
+                    android:layout_marginTop="480dp">
 
 
                     <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp">
 
 
 
@@ -416,7 +410,6 @@
                             <ImageView
                                 android:layout_width="130dp"
                                 android:layout_height="130dp"
-                                android:paddingRight="18dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/distance" />
 

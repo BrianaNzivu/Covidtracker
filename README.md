@@ -7,7 +7,7 @@ Co-Tracker is a simple Mobile Application used to display daily live statistics 
 
 
 ## Bugs
-None.Do not hesitate to cotact if any.
+None.Do not hesitate to contact if any.
 
 ## Technologies Used
 * Java

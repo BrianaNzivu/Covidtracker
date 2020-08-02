@@ -1,24 +1,19 @@
 package com.example.covid_19;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -27,7 +22,9 @@ import butterknife.ButterKnife;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment
+{
+    //Binding all view using ButterKnife
     @BindView(R.id.newCasesWorld)
     TextView newCasesWorld;
     @BindView(R.id.newDeathsWorld)
@@ -108,47 +105,55 @@ public class HomeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, view);
-//
 
+        //Initializing Volley
+        //Getting the API URL's required
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
         String url = "https://corona.lmao.ninja/v2/all";
         String urlAfrica = "https://disease.sh/v3/covid-19/continents/Africa?yesterday=false&strict=true&allowNull=true";
         String urlKenya = "https://disease.sh/v3/covid-19/countries/Kenya?yesterday=false&strict=true&allowNull=true";
 
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
+        //Getting World Statistics
+        StringRequest worldRequest = new StringRequest(Request.Method.GET, url, response ->
+        {
 
+            try
+            {
+                JSONObject jsonObject = new JSONObject(response);
+                newCasesWorld.setText(jsonObject.getString("todayCases"));
+                newDeathsWorld.setText(jsonObject.getString("todayDeaths"));
+                newRecoveredWorld.setText(jsonObject.getString("todayRecovered"));
+                totalCasesWorld.setText(jsonObject.getString("cases"));
+                totalDeathsWorld.setText(jsonObject.getString("deaths"));
+                totalRecoveredWorld.setText(jsonObject.getString("recovered"));
 
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    newCasesWorld.setText(jsonObject.getString("todayCases"));
-                    newDeathsWorld.setText(jsonObject.getString("todayDeaths"));
-                    newRecoveredWorld.setText(jsonObject.getString("todayRecovered"));
-                    totalCasesWorld.setText(jsonObject.getString("cases"));
-                    totalDeathsWorld.setText(jsonObject.getString("deaths"));
-                    totalRecoveredWorld.setText(jsonObject.getString("recovered"));
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+            } catch (JSONException e)
+            {
+                e.printStackTrace();
             }
         },
-                error -> {
+                error ->
+                {
                     Toast.makeText(getActivity().getApplicationContext(), "data not mentioned", Toast.LENGTH_LONG).show();
 
                 });
-        queue.add(stringRequest);
-        StringRequest africaRequest = new StringRequest(Request.Method.GET, urlAfrica, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
+        queue.add(worldRequest);
 
-                try {
+        //Getting Africa Statistics
+        StringRequest africaRequest = new StringRequest(Request.Method.GET, urlAfrica, new Response.Listener<String>()
+        {
+            @Override
+            public void onResponse(String response)
+            {
+
+                try
+                {
                     JSONObject jsonObject = new JSONObject(response);
                     newCasesAfrica.setText(jsonObject.getString("todayCases"));
                     newDeathsAfrica.setText(jsonObject.getString("todayDeaths"));
@@ -157,22 +162,28 @@ public class HomeFragment extends Fragment {
                     totalDeathsAfrica.setText(jsonObject.getString("deaths"));
                     totalRecoveredAfrica.setText(jsonObject.getString("recovered"));
 
-                } catch (JSONException e) {
+                } catch (JSONException e)
+                {
                     e.printStackTrace();
                 }
             }
         },
-                error -> {
+                error ->
+                {
                     Toast.makeText(getActivity().getApplicationContext(), "data not mentioned", Toast.LENGTH_LONG).show();
 
                 });
         queue.add(africaRequest);
 
-        StringRequest kenyaRequest = new StringRequest(Request.Method.GET, urlKenya, new Response.Listener<String>() {
+        //Getting Kenya Statistics
+        StringRequest kenyaRequest = new StringRequest(Request.Method.GET, urlKenya, new Response.Listener<String>()
+        {
             @Override
-            public void onResponse(String response) {
+            public void onResponse(String response)
+            {
 
-                try {
+                try
+                {
                     JSONObject jsonObject = new JSONObject(response);
                     newCasesKenya.setText(jsonObject.getString("todayCases"));
                     newDeathsKenya.setText(jsonObject.getString("todayDeaths"));
@@ -181,16 +192,19 @@ public class HomeFragment extends Fragment {
                     totalDeathsKenya.setText(jsonObject.getString("deaths"));
                     totalRecoveredKenya.setText(jsonObject.getString("recovered"));
 
-                } catch (JSONException e) {
+                } catch (JSONException e)
+                {
                     e.printStackTrace();
                 }
             }
         },
-                error -> {
+                error ->
+                {
                     Toast.makeText(getActivity().getApplicationContext(), "data not mentioned", Toast.LENGTH_LONG).show();
 
                 });
         queue.add(kenyaRequest);
+
 
         return view;
     }
